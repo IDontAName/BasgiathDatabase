@@ -494,7 +494,7 @@
       for (const c of (log.comments||[])) {
         if ((c.label||'').toLowerCase().includes(lastName) || (c.text||'').toLowerCase().includes(lastName)) {
           refs.push({ date: dateKey, dateDisplay: log.date_display, source: 'ward',
-            summary: `Comment: ${c.text.substring(0, 80)}...` });
+            summary: `Comment: ${c.text}` });
         }
       }
     }
@@ -556,7 +556,7 @@
         const text = [c.label, c.text].join(' ');
         if (text.toLowerCase().includes(q)) {
           results.ward.push({ date: dateKey, dateDisplay: log.date_display,
-            text: `${c.label}: ${c.text.substring(0, 120)}` });
+            text: `${c.label}: ${c.text}` });
         }
       }
     }
@@ -584,7 +584,7 @@
     for (const doc of EVIDENCE_DOCS) {
       const text = [doc.title, doc.content, doc.author].join(' ');
       if (text.toLowerCase().includes(q)) {
-        results.evidence.push({ id: doc.id, text: `${doc.title} — ${doc.content.substring(0, 150)}` });
+        results.evidence.push({ id: doc.id, text: `${doc.title} — ${doc.content}` });
       }
     }
     // Search cadets
